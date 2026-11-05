@@ -185,7 +185,7 @@ sequenceDiagram
         CdmB->>IMK: IMediaKeysFactory::createMediaKeys(keySystem)
         IMK-->>CdmB: IMediaKeys instance
     else initialState != RUNNING
-        Note over CdmB: m_appState set directly to initialState; IMediaKeys not created
+        Note over CdmB: m_appState set directly to initialState — IMediaKeys not created
     end
     CdmB-->>SysPriv: initialized
     SysPriv-->>OpenCDM: OpenCDMSystem object
@@ -240,7 +240,7 @@ sequenceDiagram
         CdmB->>IMK: IMediaKeysFactory::createMediaKeys(keySystem)
         IMK-->>CdmB: ready
     else initialState != RUNNING
-        Note over CdmB: IMediaKeys is not created; session creation waits for RUNNING
+        Note over CdmB: IMediaKeys is not created, session creation waits for RUNNING
     end
     CdmB-->>SysPriv: true
     SysPriv-->>OpenCDM: OpenCDMSystemPrivate*
